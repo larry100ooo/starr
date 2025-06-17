@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天秤座(Libra)專屬介紹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6B3FA0;
+            --secondary: #9D71C8;
+            --dark: #333333;
+            --light: #F7F7F7;
+            --accent: #FFD700;
+        }
+     
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Noto Sans TC', sans-serif;
+            color: white;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/always-grey.png');
+            opacity: 0.1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .symbol {
+            font-size: 6rem;
+            margin: 20px 0;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        h2 {
+            color: white;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+            margin-top: 50px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .constellation-img {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .constellation-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            border: 2px solid white;
+        }
+        
+        .constellation-img img:hover {
+            transform: scale(1.02);
+        }
+        
+        .constellation-img p {
+            margin-top: 15px;
+            font-style: italic;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .traits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .trait-card {
+            flex: 1 1 45%;
+            min-width: 300px;
+            background: rgba(0,0,0,0.5);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .trait-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        .trait-card h3 {
+            color: white;
+            margin-top: 0;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .trait-card h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .trait-card ul {
+            padding-left: 20px;
+            color: white;
+        }
+        
+        .trait-card li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .trait-card li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .mythology {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .mythology::before {
+            content: "♎";
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            font-size: 10rem;
+            opacity: 0.1;
+            z-index: 0;
+            color: white;
+        }
+        
+        .compatibility {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            color: white;
+        }
+        
+        .compatibility ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compatibility li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+        }
+        
+        .compatibility li:last-child {
+            border-bottom: none;
+        }
+        
+        .compatibility li::before {
+            content: "❤";
+            color: white;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .back-button:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            color: white;
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, var(--secondary) 60%);
+            padding: 0 3px;
+            color: white;
+        }
+        
+        p {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .symbol {
+                font-size: 4rem;
+            }
+            
+            .trait-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="symbol">♎</div>
+            <h1>天秤座 <span style="font-weight:300;">Libra</span></h1>
+            <p class="subtitle">9月23日 - 10月23日 | 風象星座 | 守護星：金星</p>
+        </header>
+
+        <section>
+            <h2>星盤圖</h2>
+            <div class="constellation-img">
+                <img src="libra天秤星盤.jpg" alt="天秤座星盤圖">
+                <p>天秤座星盤圖形</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>基本介紹</h2>
+            <p>天秤座是<span class="highlight">黃道十二宮的第七個星座</span>，象徵著平衡與和諧。作為風象星座的代表，天秤座充滿了<span class="highlight">優雅、公正和社交魅力</span>。</p>
+        </section>
+
+        <section>
+            <h2>性格特質</h2>
+            <div class="traits">
+                <div class="trait-card">
+                    <h3>優點</h3>
+                    <ul>
+                        <li>追求公平正義，重視和諧</li>
+                        <li>優雅迷人，社交能力強</li>
+                        <li>善於協調與溝通</li>
+                        <li>審美觀強，品味高雅</li>
+                        <li>理性客觀，善於分析</li>
+                    </ul>
+                </div>
+                <div class="trait-card">
+                    <h3>缺點</h3>
+                    <ul>
+                        <li>猶豫不決，難以做決定</li>
+                        <li>過度追求平衡而顯得優柔寡斷</li>
+                        <li>有時過於重視表面和諧</li>
+                        <li>容易受他人影響</li>
+                        <li>逃避衝突，不敢表達真實想法</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mythology">
+            <h2>神話故事</h2>
+            <p>天秤座的神話與<span class="highlight">正義女神阿斯特蕾亞(Astraea)</span>有關。她是宙斯與忒彌斯的女兒，手持天秤為人類衡量善惡。</p>
+            <p>在黃金時代結束後，人類道德敗壞，眾神紛紛離開人間，只有阿斯特蕾亞仍留在人間主持正義。最終她也失望離去，手中的天秤被宙斯放置於星空，成為<span class="highlight">天秤座</span>。</p>
+        </section>
+
+        <section>
+            <h2>星座象徵</h2>
+            <p>天秤座的符號♎象徵<span class="highlight">平衡的天秤</span>，代表公平與正義。這個符號也暗示著<span class="highlight">衡量與抉擇</span>，是天秤座最核心的特質。</p>
+        </section>
+
+        <section class="compatibility">
+            <h2>最佳配對</h2>
+            <p>天秤座與以下星座最為相配：</p>
+            <ul>
+                <li><strong>水瓶座</strong> - 同樣熱愛社交與理想主義</li>
+                <li><strong>雙子座</strong> - 共同追求知識與溝通</li>
+                <li><strong>獅子座</strong> - 互相欣賞對方的魅力與熱情</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2025年運勢</h2>
+            <p>2025年對天秤座來說是<span class="highlight">關係與平衡的一年</span>。金星的影響將強化你的人際關係和美感。9月至11月是建立重要關係和展現藝術才華的最佳時期，但要注意決策時的猶豫不決可能導致機會流失。</p>
+        </section>
+
+        <center>
+            <a href="星.html" class="back-button">返回星座列表</a>
+        </center>
+    </div>
+</body>
+</html>

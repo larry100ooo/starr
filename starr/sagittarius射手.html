@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>射手座(Sagittarius)專屬介紹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6A4C93;
+            --secondary: #8A5A44;
+            --dark: #333333;
+            --light: #F7F7F7;
+            --accent: #F18F01;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('sagittarius射手.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Noto Sans TC', sans-serif;
+            color: white;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #F18F01);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
+            opacity: 0.1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .symbol {
+            font-size: 6rem;
+            margin: 20px 0;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        h2 {
+            color: white;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+            margin-top: 50px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .constellation-img {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .constellation-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            border: 2px solid white;
+        }
+        
+        .constellation-img img:hover {
+            transform: scale(1.02);
+        }
+        
+        .constellation-img p {
+            margin-top: 15px;
+            font-style: italic;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .traits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .trait-card {
+            flex: 1 1 45%;
+            min-width: 300px;
+            background: rgba(0,0,0,0.5);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .trait-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        .trait-card h3 {
+            color: white;
+            margin-top: 0;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .trait-card h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .trait-card ul {
+            padding-left: 20px;
+            color: white;
+        }
+        
+        .trait-card li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .trait-card li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .mythology {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .mythology::before {
+            content: "♐";
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            font-size: 10rem;
+            opacity: 0.1;
+            z-index: 0;
+            color: white;
+        }
+        
+        .compatibility {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            color: white;
+        }
+        
+        .compatibility ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compatibility li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+        }
+        
+        .compatibility li:last-child {
+            border-bottom: none;
+        }
+        
+        .compatibility li::before {
+            content: "❤";
+            color: white;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .back-button:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            color: white;
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, var(--secondary) 60%);
+            padding: 0 3px;
+            color: white;
+        }
+        
+        p {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .symbol {
+                font-size: 4rem;
+            }
+            
+            .trait-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="symbol">♐</div>
+            <h1>射手座 <span style="font-weight:300;">Sagittarius</span></h1>
+            <p class="subtitle">11月22日 - 12月21日 | 火象星座 | 守護星：木星</p>
+        </header>
+
+        <section>
+            <h2>星盤圖</h2>
+            <div class="constellation-img">
+                <img src="sagittarius射手星盤.jpg" alt="射手座星盤圖">
+                <p>射手座星盤圖形</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>基本介紹</h2>
+            <p>射手座是<span class="highlight">黃道十二宮的第九個星座</span>，象徵著探索、自由與哲學思考。作為火象星座的代表，射手座以其<span class="highlight">樂觀、冒險精神和開闊視野</span>聞名。</p>
+        </section>
+
+        <section>
+            <h2>性格特質</h2>
+            <div class="traits">
+                <div class="trait-card">
+                    <h3>優點</h3>
+                    <ul>
+                        <li>樂觀積極，充滿正能量</li>
+                        <li>熱愛自由與冒險</li>
+                        <li>誠實直率，不虛偽</li>
+                        <li>思想開闊，富有哲理</li>
+                        <li>幽默風趣，善於交際</li>
+                    </ul>
+                </div>
+                <div class="trait-card">
+                    <h3>缺點</h3>
+                    <ul>
+                        <li>有時過於直言不諱</li>
+                        <li>缺乏耐心和持久力</li>
+                        <li>可能過於理想化</li>
+                        <li>不喜歡承諾和約束</li>
+                        <li>容易衝動行事</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mythology">
+            <h2>神話故事</h2>
+            <p>射手座的神話與希臘神話中的<span class="highlight">半人馬凱龍</span>(Chiron)有關。凱龍是半人馬中最有智慧的一位，精通醫術、音樂和預言，曾是許多希臘英雄的老師。</p>
+            <p>在一次意外中，凱龍被赫拉克勒斯的毒箭所傷，但因不死之身而痛苦不堪。最終他自願放棄永生，宙斯為表彰他的貢獻，將他升上天空成為射手座。</p>
+        </section>
+
+        <section>
+            <h2>星座象徵</h2>
+            <p>射手座的符號♐象徵<span class="highlight">弓箭手的箭</span>，代表著目標、方向和追求。這個符號也暗示著精神與物質的平衡，象徵著<span class="highlight">對真理的追求與遠方的召喚</span>。</p>
+        </section>
+
+        <section class="compatibility">
+            <h2>最佳配對</h2>
+            <p>射手座與以下星座最為相配：</p>
+            <ul>
+                <li><strong>獅子座</strong> - 同樣熱情洋溢，活力四射</li>
+                <li><strong>白羊座</strong> - 共同追求冒險與新鮮感</li>
+                <li><strong>水瓶座</strong> - 思想開放，熱愛自由</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2025年運勢</h2>
+            <p>2025年對射手座來說是<span class="highlight">擴展視野的一年</span>。木星的影響將帶給你旅行、學習和成長的機會。11月至12月是實現夢想和拓展人際關係的黃金時期，但要注意避免因過度樂觀而忽略現實考量。</p>
+        </section>
+
+        <center>
+            <a href="星.html" class="back-button">返回星座列表</a>
+        </center>
+    </div>
+</body>
+</html>

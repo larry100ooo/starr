@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雙魚座(Pisces)專屬介紹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4B6A9B;
+            --secondary: #6B8CBE;
+            --dark: #333333;
+            --light: #F7F7F7;
+            --accent: #A5D8FF;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('pisces雙魚.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Noto Sans TC', sans-serif;
+            color: white;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(165, 216, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/always-grey.png');
+            opacity: 0.1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .symbol {
+            font-size: 6rem;
+            margin: 20px 0;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        h2 {
+            color: white;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+            margin-top: 50px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .constellation-img {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .constellation-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            border: 2px solid white;
+        }
+        
+        .constellation-img img:hover {
+            transform: scale(1.02);
+        }
+        
+        .constellation-img p {
+            margin-top: 15px;
+            font-style: italic;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .traits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .trait-card {
+            flex: 1 1 45%;
+            min-width: 300px;
+            background: rgba(0,0,0,0.5);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .trait-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        .trait-card h3 {
+            color: white;
+            margin-top: 0;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .trait-card h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .trait-card ul {
+            padding-left: 20px;
+            color: white;
+        }
+        
+        .trait-card li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .trait-card li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .mythology {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .mythology::before {
+            content: "♓";
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            font-size: 10rem;
+            opacity: 0.1;
+            z-index: 0;
+            color: white;
+        }
+        
+        .compatibility {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            color: white;
+        }
+        
+        .compatibility ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compatibility li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+        }
+        
+        .compatibility li:last-child {
+            border-bottom: none;
+        }
+        
+        .compatibility li::before {
+            content: "❤";
+            color: white;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .back-button:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            color: white;
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, var(--secondary) 60%);
+            padding: 0 3px;
+            color: white;
+        }
+        
+        p {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .symbol {
+                font-size: 4rem;
+            }
+            
+            .trait-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="symbol">♓</div>
+            <h1>雙魚座 <span style="font-weight:300;">Pisces</span></h1>
+            <p class="subtitle">2月19日 - 3月20日 | 水象星座 | 守護星：海王星</p>
+        </header>
+
+        <section>
+            <h2>星盤圖</h2>
+            <div class="constellation-img">
+                <img src="pisces雙魚星盤.jpg" alt="雙魚座星盤圖">
+                <p>雙魚座星盤圖形</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>基本介紹</h2>
+            <p>雙魚座是<span class="highlight">黃道十二宮的最後一個星座</span>，象徵著夢想與直覺。作為水象星座的代表，雙魚座充滿了<span class="highlight">同情心、想像力和靈性</span>。</p>
+        </section>
+
+        <section>
+            <h2>性格特質</h2>
+            <div class="traits">
+                <div class="trait-card">
+                    <h3>優點</h3>
+                    <ul>
+                        <li>富有同情心，善解人意</li>
+                        <li>直覺敏銳，想像力豐富</li>
+                        <li>藝術天賦高，創造力強</li>
+                        <li>無私奉獻，樂於助人</li>
+                        <li>適應力強，包容性高</li>
+                    </ul>
+                </div>
+                <div class="trait-card">
+                    <h3>缺點</h3>
+                    <ul>
+                        <li>過於理想化，不切實際</li>
+                        <li>容易逃避現實</li>
+                        <li>情緒波動大</li>
+                        <li>缺乏界限感</li>
+                        <li>決策困難</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mythology">
+            <h2>神話故事</h2>
+            <p>雙魚座的神話與<span class="highlight">愛與美的女神阿芙蘿黛蒂(Aphrodite)和她的兒子厄洛斯(Eros)</span>有關。當怪物堤豐(Typhon)攻擊奧林匹斯山時，眾神紛紛變形逃離。</p>
+            <p>阿芙蘿黛蒂和厄洛斯變成一對魚，用繩子綁在一起跳入河中逃脫。後來雅典娜將這對魚升上天空，成為<span class="highlight">雙魚座</span>，象徵母愛的保護。</p>
+        </section>
+
+        <section>
+            <h2>星座象徵</h2>
+            <p>雙魚座的符號♓象徵<span class="highlight">兩條游向相反方向的魚</span>，代表二元性與矛盾。這個符號也暗示著<span class="highlight">精神與物質的拉扯</span>，是雙魚座最核心的特質。</p>
+        </section>
+
+        <section class="compatibility">
+            <h2>最佳配對</h2>
+            <p>雙魚座與以下星座最為相配：</p>
+            <ul>
+                <li><strong>巨蟹座</strong> - 同樣情感豐富且重視家庭</li>
+                <li><strong>天蠍座</strong> - 共同追求深度情感連結</li>
+                <li><strong>摩羯座</strong> - 互相補足現實與理想</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2025年運勢</h2>
+            <p>2025年對雙魚座來說是<span class="highlight">靈性成長與創造力爆發的一年</span>。海王星的影響將強化你的直覺和藝術才能。2月至4月是發展靈性與創意項目的最佳時期，但要注意區分現實與幻想，避免被不切實際的想法誤導。</p>
+        </section>
+
+        <center>
+            <a href="星.html" class="back-button">返回星座列表</a>
+        </center>
+    </div>
+</body>
+</html>

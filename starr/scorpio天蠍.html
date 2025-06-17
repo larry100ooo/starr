@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天蠍座(Scorpio)專屬介紹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #5D001E;
+            --secondary: #9A1750;
+            --dark: #1A1A1D;
+            --light: #F7F7F7;
+            --accent: #E3AFBC;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Noto Sans TC', sans-serif;
+            color: white;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(26, 26, 29, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.6);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #9A1750);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(227, 175, 188, 0.3);
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/dark-geometric.png');
+            opacity: 0.2;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .symbol {
+            font-size: 6rem;
+            margin: 20px 0;
+            color: white;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        h2 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+            margin-top: 50px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            letter-spacing: 1px;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .constellation-img {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .constellation-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+            border: 2px solid var(--accent);
+        }
+        
+        .constellation-img img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+        }
+        
+        .constellation-img p {
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--accent);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        
+        .traits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .trait-card {
+            flex: 1 1 45%;
+            min-width: 300px;
+            background: rgba(30, 0, 15, 0.6);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(227, 175, 188, 0.2);
+        }
+        
+        .trait-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+            background: rgba(45, 0, 22, 0.7);
+        }
+        
+        .trait-card h3 {
+            color: var(--accent);
+            margin-top: 0;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .trait-card h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .trait-card ul {
+            padding-left: 20px;
+            color: white;
+        }
+        
+        .trait-card li {
+            margin-bottom: 8px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .trait-card li::before {
+            content: "♏";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1.2em;
+            font-size: 0.8em;
+        }
+        
+        .mythology {
+            background: rgba(30, 0, 15, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+            color: white;
+            border: 1px solid rgba(227, 175, 188, 0.2);
+        }
+        
+        .mythology::before {
+            content: "♏";
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            font-size: 10rem;
+            opacity: 0.1;
+            z-index: 0;
+            color: var(--accent);
+        }
+        
+        .compatibility {
+            background: rgba(30, 0, 15, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            color: white;
+            border: 1px solid rgba(227, 175, 188, 0.2);
+        }
+        
+        .compatibility ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compatibility li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(227, 175, 188, 0.2);
+            display: flex;
+            align-items: center;
+        }
+        
+        .compatibility li:last-child {
+            border-bottom: none;
+        }
+        
+        .compatibility li::before {
+            content: "♥";
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+            border: 1px solid var(--accent);
+        }
+        
+        .back-button:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+            color: var(--primary);
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, var(--secondary) 60%);
+            padding: 0 3px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        p {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .symbol {
+                font-size: 4rem;
+            }
+            
+            .trait-card {
+                flex: 1 1 100%;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="symbol">♏</div>
+            <h1>天蠍座 <span style="font-weight:300;">Scorpio</span></h1>
+            <p class="subtitle">10月23日 - 11月21日 | 水象星座 | 守護星：冥王星</p>
+        </header>
+
+        <section>
+            <h2>星盤圖</h2>
+            <div class="constellation-img">
+                <img src="scorpio天蠍星盤.jpg" alt="天蠍座星盤圖">
+                <p>天蠍座星盤圖形 </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>基本介紹</h2>
+            <p>天蠍座是<span class="highlight">黃道十二宮的第八個星座</span>，象徵著轉化、深度與神秘力量。作為水象星座的代表，天蠍座以其<span class="highlight">強烈的情感、洞察力和意志力</span>聞名於世。</p>
+            <p>天蠍座的人擁有驚人的直覺和穿透力，能夠看透表象直達本質。他們是十二星座中最為複雜、最為深沉的一個，同時也是最富有激情和轉化能力的星座。</p>
+        </section>
+
+        <section>
+            <h2>性格特質</h2>
+            <div class="traits">
+                <div class="trait-card">
+                    <h3>優點</h3>
+                    <ul>
+                        <li>意志堅定，不屈不撓</li>
+                        <li>直覺敏銳，洞察力強</li>
+                        <li>情感深沉而忠誠</li>
+                        <li>善於保守秘密</li>
+                        <li>擁有強大的轉化與重生能力</li>
+                        <li>執行力強，說到做到</li>
+                    </ul>
+                </div>
+                <div class="trait-card">
+                    <h3>缺點</h3>
+                    <ul>
+                        <li>佔有慾和控制慾過強</li>
+                        <li>容易記仇，不輕易原諒</li>
+                        <li>有時過於神秘和封閉</li>
+                        <li>情感極端，愛恨分明</li>
+                        <li>可能過於多疑</li>
+                        <li>不擅長表達柔軟情感</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mythology">
+            <h2>神話故事</h2>
+            <p>天蠍座的神話與希臘神話中的<span class="highlight">獵人奧利安</span>(Orion)的故事密切相關。奧利安自誇能夠殺死地球上所有的生物，這激怒了大地女神蓋亞，她派出一隻巨大的蠍子去殺死奧利安。</p>
+            <p>在激烈的戰鬥後，蠍子成功蜇死了奧利安。為表彰蠍子的功績，宙斯將它升上天空成為天蠍座。有趣的是，奧利安也被升為獵戶座，但宙斯特意將它們安排在天空的兩端，所以當天蠍座升起時，獵戶座就會落下，永遠不會同時出現在天空中。</p>
+        </section>
+
+        <section>
+            <h2>星座象徵</h2>
+            <p>天蠍座的符號♏象徵<span class="highlight">蠍子的毒刺</span>，代表著致命一擊的力量與自我保護。這個符號也暗示著性與生殖能力，象徵著<span class="highlight">生命的終結與重生</span>的循環。</p>
+            <p>在更高層次上，天蠍座的符號也代表著老鷹和鳳凰，象徵著從低層次慾望向高層次智慧的轉化過程，展現了天蠍座強大的進化能力。</p>
+        </section>
+
+        <section class="compatibility">
+            <h2>最佳配對</h2>
+            <p>天蠍座與以下星座最為相配：</p>
+            <ul>
+                <li><strong>巨蟹座</strong> - 情感深度匹配，互相理解內心世界</li>
+                <li><strong>雙魚座</strong> - 靈魂層面的連結，直覺相通</li>
+                <li><strong>摩羯座</strong> - 互相尊重，共同追求目標</li>
+                <li><strong>處女座</strong> - 細膩互補，能滿足彼此需求</li>
+            </ul>
+            <p>天蠍座在感情中追求深度連結和絕對忠誠，最厭惡膚淺的關係。一旦認定對方，會展現驚人的奉獻精神，但也要求同等的回報。</p>
+        </section>
+
+        <section>
+            <h2>2025年運勢</h2>
+            <p>2025年對天蠍座來說是<span class="highlight">轉化與重生的一年</span>。冥王星的影響將帶給你深度自我審視的機會，促使你放下不再服務於你的舊模式。</p>
+            <p>10月至11月是力量最強的時期，適合處理財務、親密關係和個人轉型等深層課題。但要注意避免因過度控制而引發不必要的衝突，學習信任生命自然的流動。</p>
+            <p>這一年天蠍座將經歷重要的內在蛻變，雖然過程可能艱難，但最終會發現自己比想像中更加強大，準備好迎接全新的生命篇章。</p>
+        </section>
+
+        <center>
+            <a href="星.html" class="back-button">返回星座列表</a>
+        </center>
+    </div>
+</body>
+</html>

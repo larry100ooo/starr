@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雙子座(Gemini)專屬介紹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #122252;
+            --secondary: #262d7c;
+            --dark: #333333;
+            --light: #F7F7F7;
+            --accent: #00CECB;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('雙.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Noto Sans TC', sans-serif;
+            color: white;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #FFD700);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('cancer巨蟹.jpg');
+            opacity: 0.1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .symbol {
+            font-size: 6rem;
+            margin: 20px 0;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        h2 {
+            color: white;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+            margin-top: 50px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .constellation-img {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .constellation-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            border: 2px solid white;
+        }
+        
+        .constellation-img img:hover {
+            transform: scale(1.02);
+        }
+        
+        .constellation-img p {
+            margin-top: 15px;
+            font-style: italic;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .traits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .trait-card {
+            flex: 1 1 45%;
+            min-width: 300px;
+            background: rgba(0,0,0,0.5);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .trait-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        .trait-card h3 {
+            color: white;
+            margin-top: 0;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .trait-card h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .trait-card ul {
+            padding-left: 20px;
+            color: white;
+        }
+        
+        .trait-card li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .trait-card li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .mythology {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .mythology::before {
+            content: "♊";
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            font-size: 10rem;
+            opacity: 0.1;
+            z-index: 0;
+            color: white;
+        }
+        
+        .compatibility {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            color: white;
+        }
+        
+        .compatibility ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compatibility li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+        }
+        
+        .compatibility li:last-child {
+            border-bottom: none;
+        }
+        
+        .compatibility li::before {
+            content: "❤";
+            color: white;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .back-button:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            color: white;
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, var(--secondary) 60%);
+            padding: 0 3px;
+            color: white;
+        }
+        
+        p {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .symbol {
+                font-size: 4rem;
+            }
+            
+            .trait-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="symbol">♊</div>
+            <h1>雙子座 <span style="font-weight:300;">Gemini</span></h1>
+            <p class="subtitle">5月21日 - 6月21日 | 風象星座 | 守護星：水星</p>
+        </header>
+
+        <section>
+            <h2>星盤圖</h2>
+            <div class="constellation-img">
+                <img src="雙子座星盤.jpg" alt="雙子座星盤圖">
+                <p>雙子座星盤圖形</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>基本介紹</h2>
+            <p>雙子座是<span class="highlight">黃道十二宮的第三個星座</span>，象徵著溝通與變化。作為風象星座的代表，雙子座充滿了<span class="highlight">好奇心、機智和多變性</span>。</p>
+        </section>
+
+        <section>
+            <h2>性格特質</h2>
+            <div class="traits">
+                <div class="trait-card">
+                    <h3>優點</h3>
+                    <ul>
+                        <li>聰明機智，反應敏捷</li>
+                        <li>善於溝通，表達能力強</li>
+                        <li>適應力強，多才多藝</li>
+                        <li>好奇心旺盛，學習能力強</li>
+                        <li>幽默風趣，社交能力佳</li>
+                    </ul>
+                </div>
+                <div class="trait-card">
+                    <h3>缺點</h3>
+                    <ul>
+                        <li>容易分心，缺乏耐心</li>
+                        <li>有時過於善變不定</li>
+                        <li>表面化，缺乏深度</li>
+                        <li>容易感到無聊</li>
+                        <li>有時言不由衷</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mythology">
+            <h2>神話故事</h2>
+            <p>雙子座的神話源自希臘神話中的<span class="highlight">卡斯托耳(Castor)與波魯克斯(Pollux)兄弟</span>的故事。他們是同母異父的兄弟，卡斯托耳是凡人，波魯克斯則是宙斯之子。</p>
+            <p>當卡斯托耳戰死後，波魯克斯請求宙斯讓兄弟倆共享永生，於是宙斯將他們安置在天上成為雙子星座，象徵<span class="highlight">永恆的兄弟情誼</span>。</p>
+        </section>
+
+        <section>
+            <h2>星座象徵</h2>
+            <p>雙子座的符號♊象徵<span class="highlight">羅馬數字II</span>，代表雙胞胎的形象。這個符號也暗示著<span class="highlight">雙重性格與二元性</span>，是雙子座最鮮明的特徵。</p>
+        </section>
+
+        <section class="compatibility">
+            <h2>最佳配對</h2>
+            <p>雙子座與以下星座最為相配：</p>
+            <ul>
+                <li><strong>天秤座</strong> - 同樣熱愛交流與社交</li>
+                <li><strong>水瓶座</strong> - 共同追求知識與創新</li>
+                <li><strong>獅子座</strong> - 互相欣賞對方的活力與魅力</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2025年運勢</h2>
+            <p>2025年對雙子座來說是<span class="highlight">溝通與學習的一年</span>。水星的影響將強化你的表達能力和好奇心。5月至7月是學習新技能和拓展人脈的最佳時期，但要注意專注力的培養，避免因過度分散注意力而一事無成。</p>
+        </section>
+
+        <center>
+            <a href="星.html" class="back-button">返回星座列表</a>
+        </center>
+    </div>
+</body>
+</html>

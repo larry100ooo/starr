@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星座預言家</title>
+  <style>
+    /* CSS 樣式 */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #0a0a1a;
+      background-image:
+        radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 1px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 1px);
+      background-size: 30px 30px, 60px 60px;
+      background-position: 0 0, 30px 30px;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(10, 10, 30, 0.8);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(100, 100, 255, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+      color: #6a6ac0;
+      text-shadow: 0 0 10px rgba(106, 106, 192, 0.5);
+      margin-bottom: 30px;
+    }
+
+    .zodiac-selector {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #9a9ae6;
+      border-bottom: 1px solid #4a4a8a;
+      padding-bottom: 10px;
+    }
+
+    .zodiac-signs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .sign {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 15px 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(106, 106, 192, 0.3);
+    }
+
+    .sign:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 15px rgba(106, 106, 192, 0.5);
+    }
+
+    .sign.active {
+      background: rgba(106, 106, 192, 0.4); /* Highlight active sign */
+      border: 1px solid #6a6ac0;
+      box-shadow: 0 0 15px rgba(106, 106, 192, 0.7);
+    }
+
+    .sign img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    }
+
+    .sign span {
+      display: block;
+      font-size: 14px;
+    }
+
+    .horoscope-display {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #4a4a8a;
+      margin-top: 20px;
+      min-height: 200px;
+    }
+
+    #selected-sign {
+      color: #d4d4ff;
+      margin-top: 0;
+    }
+
+    .tabs {
+      margin-bottom: 15px;
+    }
+
+    .tabs button {
+      background: #4a4a8a;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin-right: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .tabs button:hover {
+      background: #5a5a9a;
+    }
+
+    .tabs button.active {
+      background: #6a6ac0;
+      box-shadow: 0 0 10px rgba(106, 106, 192, 0.5);
+    }
+
+    #horoscope-text {
+      line-height: 1.6;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 3px solid #6a6ac0;
+      margin-bottom: 15px; 
+    }
+
+    #external-link-button {
+      display: none; 
+      background: #e6b800; 
+      color: #0a0a1a;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    #external-link-button:hover {
+      background: #ffcc00;
+    }
+
+    /* 響應式設計 */
+    @media (max-width: 600px) {
+      .zodiac-signs {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 400px) {
+      .zodiac-signs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✨ 星座預言家 ✨</h1>
+
+    <div class="zodiac-selector">
+      <h2>選擇你的星座</h2>
+      <div class="zodiac-signs" id="zodiacSigns">
+        </div>
+
+      <div class="horoscope-display">
+        <h3 id="selected-sign">請選擇星座</h3>
+        <div class="tabs">
+          <button class="active" data-period="daily">今日運勢</button>
+          <button data-period="weekly">本週運勢</button>
+        </div>
+        <p id="horoscope-text">選擇你的星座查看專屬運勢...</p>
+        <button id="external-link-button">查看更多星座分析</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript 功能
+    document.addEventListener('DOMContentLoaded', function() {
+      // 星座資料
+      const zodiacData = [
+        {
+          id: "aries", name: "白羊座", icon: "♈",
+          externalUrl: "aries白羊.html"  // 白羊座外部連結
+        },
+        { id: "taurus", name: "金牛座", icon: "♉",
+          externalUrl: "taurus金牛.html"
+        },
+        { id: "gemini", name: "雙子座", icon: "♊",
+          externalUrl: "gemini雙子.html"
+        },
+        { id: "cancer", name: "巨蟹座", icon: "♋",
+          externalUrl: "cancer巨蟹.html"
+        },
+        { id: "leo", name: "獅子座", icon: "♌",
+          externalUrl: "leo獅子.html"
+        },
+        { id: "virgo", name: "處女座", icon: "♍",
+          externalUrl: "virgo處女.html"
+        },
+        { id: "libra", name: "天秤座", icon: "♎",
+          externalUrl: "libra天秤.html"
+        },
+        { id: "scorpio", name: "天蠍座", icon: "♏",
+          externalUrl: "scorpio天蠍.html"
+        },
+        { id: "sagittarius", name: "射手座", icon: "♐",
+          externalUrl: "sagittarius射手.html"
+        },
+        { id: "capricorn", name: "摩羯座", icon: "♑",
+          externalUrl: "capricorn魔羯.html"
+        },
+        { id: "aquarius", name: "水瓶座", icon: "♒",
+          externalUrl: "aquarius水瓶.html"
+        },
+        { id: "pisces", name: "雙魚座", icon: "♓",
+          externalUrl: "pisces雙魚.html"
+        }
+      ];
+
+      // 運勢資料
+      const horoscopeData = {
+        aries: {
+          daily: "今天你會充滿能量和熱情！火星正在你的星座，帶來強大的行動力。適合開始新項目或挑戰自我。",
+          weekly: "本週你會感覺特別有活力，事業上有突破機會。週三可能會有意外的驚喜，保持開放的心態。"
+        },
+        taurus: {
+          daily: "今天金星為你帶來好運，特別是在財務方面。但要避免衝動購物，先列好清單再行動。",
+          weekly: "本週適合整理生活步調，別太急躁。週五前後可能會收到重要消息，保持手機暢通。"
+        },
+        gemini: {
+          daily: "水星今天特別活躍，你的溝通能力達到高峰。適合談判、簽約或表達你的創意想法。",
+          weekly: "本週社交運旺盛，可能會認識有趣的新朋友。工作上有合作機會，團隊合作比單打獨鬥更有效。"
+        },
+        cancer: {
+          daily: "月亮今天在你的星座，情緒可能比較敏感。給自己一些獨處時間，傾聽內心的聲音。",
+          weekly: "本週家庭事務需要多關注，可能會有家人需要你的支持。週末適合整理居家環境。"
+        },
+        leo: {
+          daily: "太陽賦予你額外的魅力，今天你特別引人注目。大膽表達自己，但要注意不要太強勢。",
+          weekly: "本週創意能量高漲，適合藝術創作或提出新點子。財務上可能有意外收入，但也要控制開支。"
+        },
+        virgo: {
+          daily: "今天你的分析能力特別強，適合解決複雜問題。細節決定成敗，但也要注意大局。",
+          weekly: "本週工作效率高，但要注意健康問題。週中可能會有重要任務交辦，展現你的專業能力。"
+        },
+        libra: {
+          daily: "金星今天為你的人際關係帶來和諧。適合修復舊關係或建立新聯繫，但要注意平衡付出與收穫。",
+          weekly: "本週合作運佳，可能會遇到貴人相助。財務上需要謹慎規劃，避免不必要的開支。"
+        },
+        scorpio: {
+          daily: "冥王星帶來深度思考的能量，今天適合研究或解決複雜問題。信任你的直覺，它很少出錯。",
+          weekly: "本週轉變的能量強烈，可能會有意想不到的發展。保持靈活性，舊的結束意味著新的開始。"
+        },
+        sagittarius: {
+          daily: "木星擴展你的視野，今天特別適合學習新事物或計劃旅行。保持樂觀，機會就在眼前。",
+          weekly: "本週冒險精神高漲，可能會有意外的旅行機會。工作上可能有海外聯繫，保持開放態度。"
+        },
+        capricorn: {
+          daily: "土星帶來務實的能量，今天適合處理長期規劃。一步一腳印，穩紮穩打會帶來最佳結果。",
+          weekly: "本週事業運強勁，努力會被看見。週末前可能會有意外的責任降臨，準備好迎接挑戰。"
+        },
+        aquarius: {
+          daily: "天王星激發你的創新思維，今天可能會有突破性想法。與不同領域的人交流會帶來靈感。",
+          weekly: "本週社交圈可能擴大，會認識志同道合的新朋友。團體活動中你的獨特觀點會受到欣賞。"
+        },
+        pisces: {
+          daily: "海王星增強你的直覺，今天特別有創造力。藝術活動或冥想會讓你感到平靜與滿足。",
+          weekly: "本週心靈成長是重點，可能會有意義深刻的夢境或直覺。幫助他人也會為自己帶來好運。"
+        }
+      };
+
+      const zodiacSignsContainer = document.getElementById('zodiacSigns');
+      const externalLinkButton = document.getElementById('external-link-button');
+      let currentSelectedSignId = null; // 用於追蹤當前選中的星座 ID
+
+      // 初始化星座選擇按鈕
+      zodiacData.forEach(sign => {
+        const signElement = document.createElement('div');
+        signElement.className = 'sign';
+        signElement.dataset.sign = sign.id;
+        signElement.innerHTML = `
+          <div style="font-size: 2em;">${sign.icon}</div>
+          <span>${sign.name}</span>
+        `;
+
+        signElement.addEventListener('click', () => {
+          selectSign(sign.id);
+        });
+
+        zodiacSignsContainer.appendChild(signElement);
+      });
+
+      // 處理標籤切換
+      const tabButtons = document.querySelectorAll('.tabs button');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          if (currentSelectedSignId) { // 如果已經有選中的星座
+            updateHoroscopeDisplay(currentSelectedSignId, button.dataset.period);
+          } else {
+            // 如果沒有選中的星座但點擊了tab，嘗試選中預設星座
+            const firstDisplayableSign = zodiacData.find(s => !s.externalUrl);
+            if (firstDisplayableSign) {
+                selectSign(firstDisplayableSign.id);
+            } else if (zodiacData.length > 0) {
+                selectSign(zodiacData[0].id); // 如果所有都有外部連結，預設選第一個
+            }
+          }
+        });
+      });
+
+      // 選擇星座函數
+      function selectSign(signId) {
+        const sign = zodiacData.find(s => s.id === signId);
+        currentSelectedSignId = signId; // 更新當前選中的星座 ID
+
+        // 移除所有星座的 active 類別
+        const allSigns = document.querySelectorAll('.sign');
+        allSigns.forEach(s => s.classList.remove('active'));
+
+        // 為選定的星座添加 active 類別
+        const selectedSignElement = document.querySelector(`.sign[data-sign="${signId}"]`);
+        if (selectedSignElement) {
+            selectedSignElement.classList.add('active');
+        }
+
+        // 更新運勢顯示
+        const activePeriod = document.querySelector('.tabs button.active').dataset.period;
+        updateHoroscopeDisplay(signId, activePeriod);
+
+        // 檢查是否有外部連結，並顯示/隱藏按鈕
+        if (sign && sign.externalUrl) {
+            externalLinkButton.style.display = 'block'; // 顯示按鈕
+            externalLinkButton.onclick = () => { // 綁定點擊事件，點擊時跳轉
+                window.open(sign.externalUrl, '_blank');
+            };
+        } else {
+            externalLinkButton.style.display = 'none'; // 隱藏按鈕
+            externalLinkButton.onclick = null; // 移除點擊事件
+        }
+      }
+
+      // 更新運勢顯示
+      function updateHoroscopeDisplay(signId, period) {
+        const sign = zodiacData.find(s => s.id === signId);
+        if (horoscopeData[signId] && horoscopeData[signId][period]) {
+            const horoscope = horoscopeData[signId][period];
+            document.getElementById('selected-sign').textContent =
+              `${sign.name} ${period === 'daily' ? '今日' : '本週'}運勢`;
+            document.getElementById('horoscope-text').textContent = horoscope;
+        } else {
+            // 如果找不到運勢資料，顯示提示
+            document.getElementById('selected-sign').textContent = `${sign ? sign.name : '未知'} 運勢`;
+            document.getElementById('horoscope-text').textContent = "抱歉，目前沒有這個星座的運勢資料。";
+        }
+      }
+
+      // **最重要的修正：確保頁面載入時有預設選中**
+      // 確保在所有 DOM 元素和事件監聽器設置完畢後執行預設選擇
+      if (zodiacData.length > 0) {
+        const firstDisplayableSign = zodiacData.find(s => !s.externalUrl);
+        if (firstDisplayableSign) {
+          selectSign(firstDisplayableSign.id); // 優先選第一個沒有外部連結的
+        } else {
+          selectSign(zodiacData[0].id); // 如果所有都有外部連結，選第一個
+        }
+      }
+      // 如果 zodiacData 是空的，則保持原始的提示文本
+    });
+  </script>
+</body>
+</html>

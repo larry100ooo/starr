@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>處女座(Virgo)專屬介紹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #550889;
+            --secondary: #1a0590;
+            --dark: #191513;
+            --light: #842828;
+            --accent: #d47500;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('virgo處女.jpg');
+            background-color: #311f3e;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Noto Sans TC', sans-serif;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(185, 144, 182,0.4);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border: 1px solid rgba(163, 196, 188, 0.966);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #5D8E7D);
+            color: rgb(100, 10, 18);
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
+            opacity: 0.1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .symbol {
+            font-size: 6rem;
+            margin: 20px 0;
+            color: rgb(58, 12, 12);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+            margin-top: 50px;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .constellation-img {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .constellation-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border: 2px solid var(--accent);
+        }
+        
+        .constellation-img img:hover {
+            transform: scale(1.03);
+        }
+        
+        .constellation-img p {
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--secondary);
+        }
+        
+        .traits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .trait-card {
+            flex: 1 1 45%;
+            min-width: 300px;
+            background: rgb(229, 169, 110,0.4);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(198, 183, 106, 0.3);
+        }
+        
+        .trait-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .trait-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .trait-card h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .trait-card ul {
+            padding-left: 20px;
+            color: #382263;
+        }
+        
+        .trait-card li {
+            margin-bottom: 8px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .trait-card li::before {
+            content: "♍";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1.2em;
+            font-size: 0.8em;
+        }
+        
+        .mythology {
+            background: rgb(225, 212, 148,0.4);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            color: #555;
+            border: 1px solid rgba(163, 196, 188, 0.3);
+        }
+        
+        .mythology::before {
+            content: "♍";
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            font-size: 10rem;
+            opacity: 0.1;
+            z-index: 0;
+            color: var(--accent);
+        }
+        
+        .compatibility {
+            background: rgb(179, 163, 204,0.4);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            color: #232667;
+            border: 1px solid rgb(236, 219, 89);
+        }
+        
+        .compatibility ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compatibility li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgb(235, 211, 116);
+            display: flex;
+            align-items: center;
+        }
+        
+        .compatibility li:last-child {
+            border-bottom: none;
+        }
+        
+        .compatibility li::before {
+            content: "♥";
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
+            border: 1px solid var(--accent);
+        }
+        
+        .back-button:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            color: var(--primary);
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, rgba(163, 196, 188, 0.3) 60%);
+            padding: 0 3px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        p {
+            line-height: 1.8;
+            color: #c19869;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .symbol {
+                font-size: 4rem;
+            }
+            
+            .trait-card {
+                flex: 1 1 100%;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="symbol">♍</div>
+            <h1>處女座 <span style="font-weight:300;">Virgo</span></h1>
+            <p class="subtitle">8月23日 - 9月22日 | 土象星座 | 守護星：水星</p>
+        </header>
+
+        <section>
+            <h2>星盤圖</h2>
+            <div class="constellation-img">
+                <img src="virgo處女星盤.jpg" alt="處女座星盤圖">
+                <p>處女座星盤圖形 - 純淨與智慧的象徵</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>基本介紹</h2>
+            <p>處女座是<span class="highlight">黃道十二宮的第六個星座</span>，象徵著分析、服務與完美主義。作為土象星座的代表，處女座以其<span class="highlight">細緻、實用和智慧</span>的特質聞名於世。</p>
+            <p>處女座的人天生具有敏銳的分析能力和強烈的服務精神，他們是十二星座中最注重細節、最有條理的星座，也是最能夠將混亂轉化為秩序的星座。</p>
+        </section>
+
+        <section>
+            <h2>性格特質</h2>
+            <div class="traits">
+                <div class="trait-card">
+                    <h3>優點</h3>
+                    <ul>
+                        <li>細心周到，注重細節</li>
+                        <li>分析能力強，邏輯清晰</li>
+                        <li>實用主義者，講求效率</li>
+                        <li>忠誠可靠，負責任</li>
+                        <li>有強烈的服務精神</li>
+                        <li>學習能力強，知識豐富</li>
+                    </ul>
+                </div>
+                <div class="trait-card">
+                    <h3>缺點</h3>
+                    <ul>
+                        <li>過於挑剔和批判</li>
+                        <li>容易擔心和焦慮</li>
+                        <li>有時過於完美主義</li>
+                        <li>過度分析導致猶豫不決</li>
+                        <li>不善於表達情感</li>
+                        <li>難以放鬆，工作狂傾向</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mythology">
+            <h2>神話故事</h2>
+            <p>處女座的神話與希臘神話中的<span class="highlight">農業女神德墨忒爾</span>(Demeter)及其女兒珀耳塞福涅(Persephone)的故事有關。珀耳塞福涅被冥王哈迪斯綁架到冥界，德墨忒爾悲痛欲絕，導致大地荒蕪。</p>
+            <p>最終宙斯介入，安排珀耳塞福涅每年有三分之二時間回到母親身邊(春夏秋)，三分之一時間留在冥界(冬季)。處女座象徵著德墨忒爾等待女兒歸來的純潔與希望，也代表著農業的周期性與自然的秩序。</p>
+        </section>
+
+        <section>
+            <h2>星座象徵</h2>
+            <p>處女座的符號♍象徵<span class="highlight">手持麥穗的少女</span>，代表著收穫、純潔與服務精神。這個符號也暗示著分析與辨別能力，象徵著<span class="highlight">智慧的篩選與實用的知識</span>。</p>
+            <p>在更深層次上，處女座的符號代表著精神的純淨與對完美的追求，展現了處女座從混亂中創造秩序的能力。</p>
+        </section>
+
+        <section class="compatibility">
+            <h2>最佳配對</h2>
+            <p>處女座與以下星座最為相配：</p>
+            <ul>
+                <li><strong>金牛座</strong> - 同樣務實可靠，價值觀相近</li>
+                <li><strong>摩羯座</strong> - 互相欣賞，共同追求成就</li>
+                <li><strong>巨蟹座</strong> - 情感互補，能滿足彼此需求</li>
+                <li><strong>天蠍座</strong> - 深度連結，互相理解</li>
+            </ul>
+            <p>處女座在感情中追求穩定和真誠，最重視伴侶的可靠性和上進心。他們可能不擅長浪漫表達，但會用實際行動和細緻關懷來表達愛意。</p>
+        </section>
+
+        <section>
+            <h2>2025年運勢</h2>
+            <p>2025年對處女座來說是<span class="highlight">自我提升的一年</span>。水星的影響將帶給你清晰的思維和溝通能力，特別是在學習和專業發展方面。</p>
+            <p>8月至10月是能量最強的時期，適合學習新技能、改善健康習慣和整理生活環境。但要注意避免因過度追求完美而導致不必要的壓力。</p>
+            <p>這一年處女座將有機會將自己的分析能力和服務精神發揮到極致，只要保持一貫的務實態度，你將能夠在專業和個人成長方面取得顯著進步。</p>
+        </section>
+
+        <center>
+            <a href="星.html" class="back-button">返回星座列表</a>
+        </center>
+    </div>
+</body>
+</html>

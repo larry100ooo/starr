@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白羊座(Aries)專屬介紹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #122252;
+            --secondary:    #262d7c;
+            --dark: #333333;
+            --light: #F7F7F7;
+            --accent: #00CECB;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('aries白羊.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Noto Sans TC', sans-serif;
+            color: white; /* 所有文字改為白色 */
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #FF8C42);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(255, 94, 91, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/always-grey.png');
+            opacity: 0.1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 加強文字陰影提高可讀性 */
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .symbol {
+            font-size: 6rem;
+            margin: 20px 0;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        h2 {
+            color: white; /* 標題改為白色 */
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+            margin-top: 50px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* 加強文字陰影 */
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .constellation-img {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .constellation-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            border: 2px solid white; /* 圖片添加白色邊框 */
+        }
+        
+        .constellation-img img:hover {
+            transform: scale(1.02);
+        }
+        
+        .constellation-img p {
+            margin-top: 15px;
+            font-style: italic;
+            color: white; /* 圖片描述改為白色 */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .traits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .trait-card {
+            flex: 1 1 45%;
+            min-width: 300px;
+            background: rgba(0,0,0,0.5); /* 半透明黑色背景確保白字可讀 */
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .trait-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        .trait-card h3 {
+            color: white; /* 卡片標題改為白色 */
+            margin-top: 0;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .trait-card h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .trait-card ul {
+            padding-left: 20px;
+            color: white; /* 列表文字改為白色 */
+        }
+        
+        .trait-card li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .trait-card li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .mythology {
+            background: rgba(0,0,0,0.5); /* 半透明黑色背景 */
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            color: white; /* 文字改為白色 */
+        }
+        
+        .mythology::before {
+            content: "♈";
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            font-size: 10rem;
+            opacity: 0.1; /* 降低透明度 */
+            z-index: 0;
+            color: white; /* 符號改為白色 */
+        }
+        
+        .compatibility {
+            background: rgba(0,0,0,0.5); /* 半透明黑色背景 */
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            color: white; /* 文字改為白色 */
+        }
+        
+        .compatibility ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compatibility li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2); /* 淺色分隔線 */
+            display: flex;
+            align-items: center;
+        }
+        
+        .compatibility li:last-child {
+            border-bottom: none;
+        }
+        
+        .compatibility li::before {
+            content: "❤";
+            color: white; /* 愛心改為白色 */
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: white; /* 按鈕背景改為白色 */
+            color: var(--primary); /* 按鈕文字改為深色 */
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .back-button:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            color: white;
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, var(--secondary) 60%);
+            padding: 0 3px;
+            color: white; /* 高亮文字改為白色 */
+        }
+        
+        p {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* 段落文字添加陰影 */
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .symbol {
+                font-size: 4rem;
+            }
+            
+            .trait-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="symbol">♈</div>
+            <h1>白羊座 <span style="font-weight:300;">Aries</span></h1>
+            <p class="subtitle">3月21日 - 4月19日 | 火象星座 | 守護星：火星</p>
+        </header>
+
+        <section>
+            <h2>星盤圖</h2>
+            <div class="constellation-img">
+                <img src="牡羊座星盤.jpg" alt="白羊座星盤圖">
+                <p>白羊座星盤圖形</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>基本介紹</h2>
+            <p>白羊座是<span class="highlight">黃道十二宮的第一個星座</span>，象徵著新的開始與原始的能量。作為火象星座的代表，白羊座充滿了<span class="highlight">熱情、勇氣和行動力</span>。</p>
+        </section>
+
+        <section>
+            <h2>性格特質</h2>
+            <div class="traits">
+                <div class="trait-card">
+                    <h3>優點</h3>
+                    <ul>
+                        <li>充滿熱情與活力</li>
+                        <li>勇敢無畏，敢於冒險</li>
+                        <li>直率真誠，不虛偽</li>
+                        <li>領導能力強</li>
+                        <li>富有創造力和開創精神</li>
+                    </ul>
+                </div>
+                <div class="trait-card">
+                    <h3>缺點</h3>
+                    <ul>
+                        <li>容易衝動行事</li>
+                        <li>缺乏耐心</li>
+                        <li>有時過於自我中心</li>
+                        <li>容易與人發生衝突</li>
+                        <li>不喜歡被約束</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mythology">
+            <h2>神話故事</h2>
+            <p>白羊座的神話源自希臘神話中的<span class="highlight">金羊毛故事</span>。傳說玻俄提亞國王阿塔瑪斯的兒子佛里克索斯和女兒赫勒受到繼母的迫害，他們的生母向眾神求助，赫爾墨斯派來一頭長著金毛的公羊拯救他們。</p>
+            <p>這頭公羊載著兩兄妹飛向科爾基斯，途中赫勒不幸墜海而死，佛里克索斯則安全抵達。為了感謝這頭公羊，佛里克索斯將它獻祭給宙斯，宙斯將其升上天空成為白羊座。</p>
+        </section>
+
+        <section>
+            <h2>星座象徵</h2>
+            <p>白羊座的符號♈象徵<span class="highlight">公羊的角</span>，代表著衝勁、勇氣和開創力。這個符號也暗示著向上生長的植物嫩芽，象徵著<span class="highlight">春天和新生命的開始</span>。</p>
+        </section>
+
+        <section class="compatibility">
+            <h2>最佳配對</h2>
+            <p>白羊座與以下星座最為相配：</p>
+            <ul>
+                <li><strong>獅子座</strong> - 同樣熱情如火，彼此欣賞</li>
+                <li><strong>射手座</strong> - 共同追求冒險與自由</li>
+                <li><strong>水瓶座</strong> - 創意與獨立精神的結合</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2025年運勢</h2>
+            <p>2025年對白羊座來說是<span class="highlight">充滿機會的一年</span>。火星的影響將帶給你額外的能量和決心，特別是在事業方面。4月至6月是實現目標的黃金時期，但要注意控制衝動，避免因急躁而錯失良機。</p>
+        </section>
+
+        <center>
+            <a href="星.html" class="back-button">返回星座列表</a>
+        </center>
+    </div>
+</body>
+</html>

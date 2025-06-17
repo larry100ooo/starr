@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摩羯座(Capricorn)專屬介紹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --secondary: #34495E;
+            --dark: #1C2833;
+            --light: #F7F7F7;
+            --accent: #7F8C8D;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Noto Sans TC', sans-serif;
+            color: white;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(28, 40, 51, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.6);
+            border: 1px solid rgba(127, 140, 141, 0.3);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #34495E);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(127, 140, 141, 0.3);
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+            opacity: 0.1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .symbol {
+            font-size: 6rem;
+            margin: 20px 0;
+            color: white;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        
+        h2 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+            margin-top: 50px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            letter-spacing: 1px;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .constellation-img {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .constellation-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+            border: 2px solid var(--accent);
+        }
+        
+        .constellation-img img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+        }
+        
+        .constellation-img p {
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--accent);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        
+        .traits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .trait-card {
+            flex: 1 1 45%;
+            min-width: 300px;
+            background: rgba(44, 62, 80, 0.7);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(127, 140, 141, 0.2);
+        }
+        
+        .trait-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+            background: rgba(52, 73, 94, 0.8);
+        }
+        
+        .trait-card h3 {
+            color: var(--accent);
+            margin-top: 0;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .trait-card h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .trait-card ul {
+            padding-left: 20px;
+            color: white;
+        }
+        
+        .trait-card li {
+            margin-bottom: 8px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .trait-card li::before {
+            content: "♑";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1.2em;
+            font-size: 0.8em;
+        }
+        
+        .mythology {
+            background: rgba(44, 62, 80, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+            color: white;
+            border: 1px solid rgba(127, 140, 141, 0.2);
+        }
+        
+        .mythology::before {
+            content: "♑";
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            font-size: 10rem;
+            opacity: 0.1;
+            z-index: 0;
+            color: var(--accent);
+        }
+        
+        .compatibility {
+            background: rgba(44, 62, 80, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            color: white;
+            border: 1px solid rgba(127, 140, 141, 0.2);
+        }
+        
+        .compatibility ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compatibility li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(127, 140, 141, 0.2);
+            display: flex;
+            align-items: center;
+        }
+        
+        .compatibility li:last-child {
+            border-bottom: none;
+        }
+        
+        .compatibility li::before {
+            content: "♥";
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+            border: 1px solid var(--accent);
+        }
+        
+        .back-button:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+            color: var(--primary);
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, var(--secondary) 60%);
+            padding: 0 3px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        p {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .symbol {
+                font-size: 4rem;
+            }
+            
+            .trait-card {
+                flex: 1 1 100%;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="symbol">♑</div>
+            <h1>摩羯座 <span style="font-weight:300;">Capricorn</span></h1>
+            <p class="subtitle">12月22日 - 1月19日 | 土象星座 | 守護星：土星</p>
+        </header>
+
+        <section>
+            <h2>星盤圖</h2>
+            <div class="constellation-img">
+                <img src="capricorn魔羯星盤.jpg" alt="摩羯座星盤圖">
+                <p>摩羯座星盤圖形 - 堅毅與穩重的象徵</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>基本介紹</h2>
+            <p>摩羯座是<span class="highlight">黃道十二宮的第十個星座</span>，象徵著成就、責任與紀律。作為土象星座的代表，摩羯座以其<span class="highlight">務實、穩重和堅忍不拔</span>的特質聞名於世。</p>
+            <p>摩羯座的人天生具有強烈的責任感和事業心，他們是十二星座中最有耐心、最謹慎的規劃者，也是最能夠為長期目標堅持不懈的星座。</p>
+        </section>
+
+        <section>
+            <h2>性格特質</h2>
+            <div class="traits">
+                <div class="trait-card">
+                    <h3>優點</h3>
+                    <ul>
+                        <li>自律性強，自我要求高</li>
+                        <li>務實可靠，值得信賴</li>
+                        <li>有耐心和毅力</li>
+                        <li>組織能力強，善於規劃</li>
+                        <li>責任感強，說到做到</li>
+                        <li>有強烈的成就動機</li>
+                    </ul>
+                </div>
+                <div class="trait-card">
+                    <h3>缺點</h3>
+                    <ul>
+                        <li>有時過於嚴肅和保守</li>
+                        <li>不擅長表達情感</li>
+                        <li>可能過於現實和功利</li>
+                        <li>容易給自己太大壓力</li>
+                        <li>害怕失敗和丟臉</li>
+                        <li>不太懂得放鬆和享樂</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mythology">
+            <h2>神話故事</h2>
+            <p>摩羯座的神話與希臘神話中的<span class="highlight">潘神</span>(Pan)的故事密切相關。在一次眾神的宴會上，怪物提豐突然出現攻擊眾神，眾神紛紛變形逃跑，潘神試圖變成一條魚跳入尼羅河，但因驚慌只變了一半，上半身是山羊，下半身是魚。</p>
+            <p>宙斯覺得這個形象很有趣，便將它升上天空成為摩羯座。這個神話解釋了摩羯座為何是山羊與魚的結合體，也象徵著摩羯座既能攀登高峰(山羊)，又能深入情感之海(魚)的雙重特質。</p>
+        </section>
+
+        <section>
+            <h2>星座象徵</h2>
+            <p>摩羯座的符號♑象徵<span class="highlight">山羊的頭與魚的尾巴</span>，代表著物質與精神的結合。這個符號也暗示著野心與謹慎的平衡，象徵著<span class="highlight">穩步攀登人生高峰</span>的過程。</p>
+            <p>在更深層次上，摩羯座的符號代表著時間與成熟的智慧，展現了摩羯座從年輕時的謹慎保守到成熟後的成就輝煌的成長軌跡。</p>
+        </section>
+
+        <section class="compatibility">
+            <h2>最佳配對</h2>
+            <p>摩羯座與以下星座最為相配：</p>
+            <ul>
+                <li><strong>金牛座</strong> - 同樣務實可靠，價值觀相近</li>
+                <li><strong>處女座</strong> - 互相欣賞，共同追求完美</li>
+                <li><strong>天蠍座</strong> - 互相尊重，能建立深厚連結</li>
+                <li><strong>巨蟹座</strong> - 情感互補，能滿足彼此需求</li>
+            </ul>
+            <p>摩羯座在感情中追求穩定和長久，最重視伴侶的可靠性和上進心。他們可能不擅長浪漫表達，但會用實際行動證明愛意。</p>
+        </section>
+
+        <section>
+            <h2>2025年運勢</h2>
+            <p>2025 年對摩羯座來說是<span class="highlight">事業突破的一年</span>。土星的影響將帶給你結構性的成長機會，特別是在職業發展方面。</p>
+            <p>12月至1月是能量最強的時期，適合設定長期目標、提升專業能力。但要注意工作與生活的平衡，避免因過度投入工作而忽略健康和人際關係。</p>
+            <p>這一年摩羯座將收穫過去努力的成果，但也面臨新的挑戰。保持一貫的耐心和務實態度，你將能夠穩步向前，逐步實現自己的理想。</p>
+        </section>
+
+        <center>
+            <a href="星.html" class="back-button">返回星座列表</a>
+        </center>
+    </div>
+</body>
+</html>
